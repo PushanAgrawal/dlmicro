@@ -2,10 +2,12 @@ const express = require("express");
 const axios = require("axios");
 const app = express("localhost", 3000);
 const dotenv = require("dotenv");
+const cors = require("cors");
 const { body, validationResult } = require("express-validator");
 dotenv.config();
 const key = process.env.key;
 app.use(express.json());
+app.use(cors());
 app.post(
   "/",
   [
